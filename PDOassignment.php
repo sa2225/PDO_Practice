@@ -18,7 +18,7 @@ echo "<br><hr>";
 /*$sql = "SELECT id, email, fname, lname, phone, birthday, gender, password FROM `accounts` WHERE id<6";
 */
 
-$sql = "SELECT * from accounts";
+$sql = "SELECT * from accounts;";
 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
