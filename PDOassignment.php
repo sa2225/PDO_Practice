@@ -9,6 +9,11 @@ $username = "sa2225";
 $password = "7kd94gor";
 $dbname = "sa2225";
 
+$html = '<html>';
+$html .= '<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">';
+$html .= '<link rel="stylesheet" href="styles.css">';
+$html .= '<body>';
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -19,18 +24,15 @@ if ($conn->connect_error) {
 
 } else {
 
-	echo "<b>Connected successfully</b>";
-	echo "<br><hr><br>";
+	$html .= "<span class='success'>Connected successfully!</span>";
+	$html .= "<br><br><hr><br>";
 
 }
 
 $result = $conn->query("SELECT * FROM accounts where id<6");
 $numberOfResults = $result->num_rows;
 
-$html = '<html>';
-$html .= '<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">';
-$html .= '<link rel="stylesheet" href="styles.css">';
-$html .= '<body>';
+
 $html .= '<span>Search returned ' . $numberOfResults . ' result(s)' . '</span><br><br>';
 
 // Checking if any results were returned
